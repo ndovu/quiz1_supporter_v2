@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   delete "/support_forms/:id" => "support_forms#destroy"
   
   get "/support_forms/edit/:id" => "support_forms#edit", as: :edit_support_form
+  post "/support_forms/edit/:id" => "support_forms#update"
 
 end

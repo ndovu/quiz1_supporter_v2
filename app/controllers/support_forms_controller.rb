@@ -25,6 +25,7 @@ class SupportFormsController < ApplicationController
   end
 
   def update
+    # render text: 'the app has gone into the support_forms_controller update action'
     @support_form = SupportForm.find(params[:id])
     if @support_form.update(params.require(:support_form).permit(:name, :email, :department, :message))
       redirect_to root_path

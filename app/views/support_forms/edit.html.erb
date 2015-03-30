@@ -1,5 +1,6 @@
-<h1>Edit Support Request</h1>
-
+<%= image_tag "totoro_square_user.png"%>
+<h2>Supporter</h2>
+<hr>
 <%= form_for :support_form do |f| %>
 
   <% if @support_form.errors.any? %>
@@ -27,11 +28,11 @@
   </p>
  
   <p>
-    <%= radio_button_tag(:department, "sales") %>
+    <%= f.radio_button(:department, "sales") %>
     <%= label_tag(:department_sales, "Sales") %>
-    <%= radio_button_tag(:department, "marketing") %>
+    <%= f.radio_button(:department, "marketing") %>
     <%= label_tag(:department_marketing, "Marketing") %>
-    <%= radio_button_tag(:department, "technical") %>
+    <%= f.radio_button(:department, "technical") %>
     <%= label_tag(:department_sales, "Technical") %>
   </p>
 
@@ -44,5 +45,5 @@
     <%= f.submit "Save" %>
   </p>
 
+
 <% end %>
-  
