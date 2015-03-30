@@ -9,7 +9,7 @@ class SupportFormsController < ApplicationController
 
   def create
     @support_form = SupportForm.new(params.require(:support_form).permit(:name, :email))
-    if @post.save
+    if @support_form.save
       redirect_to root_path
     else
       render :new

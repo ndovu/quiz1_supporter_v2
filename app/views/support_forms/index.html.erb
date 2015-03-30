@@ -1,0 +1,24 @@
+<h1>Support Requests</h1>
+
+<hr>
+<ul>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Message</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @support_forms.each do |support_form| %>
+    <tr>
+      <td><%= support_form.name %></td>
+      <td><%= support_form.email %></td>
+      <td><%= support_form.department %></td>
+      <td><%= support_form.message %></td>
+    </tr>
+  <% end %>
+</table>
+
+</ul>

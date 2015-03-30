@@ -1,0 +1,48 @@
+<h1>Edit Support Request</h1>
+
+<%= form_for :support_form do |f| %>
+
+  <% if @support_form.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@support_form.errors.count, "error") %> prohibited
+        this support_form from being saved:
+      </h2>
+      <ul>
+        <% @support_form.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+ 
+  <p>
+    <%= radio_button_tag(:department, "sales") %>
+    <%= label_tag(:department_sales, "Sales") %>
+    <%= radio_button_tag(:department, "marketing") %>
+    <%= label_tag(:department_marketing, "Marketing") %>
+    <%= radio_button_tag(:department, "technical") %>
+    <%= label_tag(:department_sales, "Technical") %>
+  </p>
+
+  <p>
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </p>
+
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+
+<% end %>
+  
