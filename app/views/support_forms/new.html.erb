@@ -28,11 +28,11 @@
   </p>
  
   <p>
-    <%= radio_button_tag(:department, "sales") %>
+    <%= f.radio_button(:department, "sales") %>
     <%= label_tag(:department_sales, "Sales") %>
-    <%= radio_button_tag(:department, "marketing") %>
+    <%= f.radio_button(:department, "marketing") %>
     <%= label_tag(:department_marketing, "Marketing") %>
-    <%= radio_button_tag(:department, "technical") %>
+    <%= f.radio_button(:department, "technical") %>
     <%= label_tag(:department_sales, "Technical") %>
   </p>
 

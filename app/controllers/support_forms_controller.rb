@@ -8,9 +8,7 @@ class SupportFormsController < ApplicationController
   end
 
   def create
-    @support_form = SupportForm.new(params.require(:support_form).permit(:name, :email))
-    @support_form.department = params[:department]
-    @support_form.message = params[:message]
+    @support_form = SupportForm.new(params.require(:support_form).permit(:name, :email, :department, :message))
     if @support_form.save
       redirect_to root_path
     else
@@ -28,7 +26,7 @@ class SupportFormsController < ApplicationController
 
   def update
     @support_form = SupportForm.find(params[:id])
-    if @support_form.update(params.require(:support_form).permit(:name, :email))
+    if @support_form.update(params.require(:support_form).permit(:name, :email, :department, :message))
       redirect_to root_path
     else
       render :edit
