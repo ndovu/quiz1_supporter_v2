@@ -1,1 +1,13 @@
-<h2>Supporter</h2>
+<h1>Support Requests</h1>
+
+<hr>
+<ul>
+  <% @support_forms.each do |support_form| %>
+    <li>
+      <%= support_form.name %> 
+      <%= link_to "show", support_form %> 
+      <%= link_to "edit", edit_post_path(support_form) %> 
+      <%= link_to "delete", support_form, method: :delete, data: {confirm: "Delete post?"} %>
+    </li>
+  <% end %>
+</ul>
