@@ -42,6 +42,13 @@
   </p>
 
   <p>
+    <%= f.radio_button(:is_done, 0) %>
+    <%= label_tag(:is_done_true, "Done") %>
+    <%= f.radio_button(:is_done, 1) %>
+    <%= label_tag(:is_done_false, "Not Done") %>
+  </p>
+
+  <p>
     <%= f.submit "Save" %>
   </p>
 

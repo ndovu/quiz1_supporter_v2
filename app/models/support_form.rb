@@ -3,6 +3,7 @@ class SupportForm < ActiveRecord::Base
   validates :email, presence: true
   :department
   :message
+  :is_done
 
-  scope :newest_first, -> { order("updated_at DESC") }
+  scope :newest_first, -> { order("is_done DESC") }
 end

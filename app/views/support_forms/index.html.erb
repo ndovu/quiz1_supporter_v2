@@ -2,6 +2,12 @@
 
 <hr>
 <ul>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search support requests:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br>
 <table>
   <tr>
     <th>Name</th>
@@ -18,8 +24,17 @@
       <td><%= mail_to support_form.email %></td>
       <td><%= support_form.department %></td>
       <td><%= support_form.message %></td>
-      <td><%= link_to "edit", edit_support_form_path(support_form) %></td>
-      <td><%= link_to "delete", support_form, method: :delete, data: {confirm: "Delete support request?"} %><td>
+      <td>
+      <%= link_to "edit", edit_support_form_path(support_form) %>
+      <%= link_to "delete", support_form, method: :delete, data: {confirm: "Delete support request?"} %>
+      <% if support_form.is_done == 0 then%>
+				<!-- <strong>Done</strong> -->
+				<%= link_to "Done", is_done_support_form_path(support_form) %>
+			<% else %>	
+				<!-- <strong>Not Done</strong> -->
+				<%= link_to "Not Done", is_done_support_form_path(support_form) %>
+			<% end %>
+			</td>
     </tr>
   <% end %>
 </table>

@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get "/support_forms/edit/:id" => "support_forms#edit", as: :edit_support_form
   post "/support_forms/edit/:id" => "support_forms#update"
 
+  get "/support_forms/is_done/:id" => "support_forms#edit", as: :is_done_support_form
+
 end

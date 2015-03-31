@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20150330233004) do
     t.string   "email"
     t.string   "department"
     t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean  "done"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "is_done",    limit: 2
   end
 
 end
